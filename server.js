@@ -17,9 +17,9 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // requiring routes .. this is tbd because there are no routes.js files yet 
-require("./routes/html-routes.js")(app);
-require("./routes/author-api-routes.js")(app);
-require("./routes/post-api-routes.js")(app);
+// require("./** folder name ** / ** file name ** )(app); // facebook
+// require("./** folder name ** / ** file name ** )(app); // google
+// require("./** folder name ** / ** files name **)(app); // twitter
 
 // syncing the sequelize models and then starting the express app
 db.sequelize.sync({ force: true }).then(function() {
