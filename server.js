@@ -22,7 +22,9 @@ app.use(express.static("public"));
 // require("./** folder name ** / ** files name **)(app); // twitter
 
 // syncing the sequelize models and then starting the express app
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync
+//({ force: true })
+.then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
