@@ -3,10 +3,10 @@
 // type into the main input field on the homepage.
 
 module.exports = function(sequelize, DataTypes) {
-    var SM_Account = sequelize.define("Account", {
+    var SM_Account = sequelize.define("SM_Account", {
       screen_name: DataTypes.STRING,
       score: DataTypes.INTEGER
     });
-    return Account;
+    return SM_Account;
   };
   
