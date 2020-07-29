@@ -1,4 +1,6 @@
 .DS_Store
 node_modules
 design
+barts_api_tests
+config/config.json
 
