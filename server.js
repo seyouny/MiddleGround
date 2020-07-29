@@ -8,7 +8,7 @@ var PORT = process.env.PORT || 8080;
 
 // still working on this .. this needs to be redirected to a folder 
 // the folder needs to have .js files in it
-//var db = require("./models");
+var db = require("./models");
 
 // this sets up the express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -28,10 +28,10 @@ app.use(express.static("public"));
 require("./routes/html-routes")(app);
 
 // syncing the sequelize models and then starting the express app
-//db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync({ force: true }).then(function() {
 
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
 
-//});
+});
