@@ -18,7 +18,7 @@ const {google} = require('googleapis');
         // doing the magic !!
         const res = await factchecktools.claims.search({
           languageCode: 'English',
-          query: 'politics',
+          query: 'the world is flat',
           key: 'AIzaSyAvfhWexV2bqPbvo1UNth0pJ4Tw-C479cA',
         });
         console.log(res.data);
@@ -29,22 +29,22 @@ const {google} = require('googleapis');
       });
       
       
-      {
-        "claims" [
-          {
-            "text": [],
-            "claimReview": [
-              {
-                "publisher": {
-                  "name": "",
-                  "site": "",
-                },
-                "url": "",
-                "title": "",
-                "textualRating": "",
-                "languageCode": "en"
-              }
-            ]
-          }
-        ]
-      }
+      // {
+      //   "claims" [
+      //     {
+      //       "text": [],
+      //       "claimReview": [
+      //         {
+      //           "publisher": {
+      //             "name": "",
+      //             "site": "",
+      //           },
+      //           "url": "",
+      //           "title": "",
+      //           "textualRating": "",
+      //           "languageCode": "en"
+      //         }
+      //       ]
+      //     }
+      //   ]
+      // }
