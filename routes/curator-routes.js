@@ -9,6 +9,8 @@ const blueFeed = [];
 const redFeed = [];
 var queryString;
 
+module.exports = function() {
+
 function getCuratorFeed (FeedId) {
     let queryString = endptURL + FeedId + "/posts?api_key=" + API_Key;
     console.log("Query String", queryString);
