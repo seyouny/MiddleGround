@@ -23,7 +23,6 @@
     "express-handlebars": "^5.1.0",
     "googleapis": "^57.0.0",
     "handlebars": "^4.7.6",
-    "mysql": "^2.18.1",
     "mysql2": "^2.1.0",
     "sequelize": "^6.3.3",
     "twit": "^2.2.11"
