@@ -28,11 +28,10 @@ const {google} = require('googleapis');
         throw e;
       });
       
-      
       {
         "claims" [
           {
-            "text": [],
+            "text": "",
             "claimReview": [
               {
                 "publisher": {
@@ -46,5 +45,6 @@ const {google} = require('googleapis');
               }
             ]
           }
-        ]
+        ],
+        "nextPageToken: Next"
       }
