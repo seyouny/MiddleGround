@@ -1,29 +1,29 @@
 <div class='jumbo'>
-<h1>Middle Ground</h1>
-<h2>Looking into Social Media to find some middle ground.</h2>
+  <img src="assets/images/logo.png" class="logo">
+<p class='tagline'>Looking into Social Media to find some middle ground.</p>
 </div>
 
 <div class='div1'>
-<form class="create-form">
+<form class="account-form">
 <h2>Enter Your Twitter Handle</h2>
   <div class="form-group">
-    <input type="text" id="feed_name" name="feed_name"><br>
-    <button type="submit">Analyze</button>
+    <input type="text" id="feed_name" name="feed_name" class="basicInput"><br>
+    <button type="submit" id='submitAccountName' class='submitBtn accountNameSubmit'>Analyze</button>
   </div>
-
-<br><hr><br>
+  </form>
+</div>
+<div class='div2'>
+  <form class="topic-form">
 <h2>Enter a topic to seach on</h2>
   <div class="form-group">
-    <input type="text" id="keyword" name="keyword"><br>
-    <button type="submit">Ananylze</button>
+    <input type="text" id="keyword" name="keyword" class="basicInput"><br>
+    <button type="submit" id="submitKeyword" class='submitBtn keywordSubmit'>Ananylze</button>
   </div>
-
-  
 </form>
 </div>
 </div>
-<fb:login-button 
+{{!-- <fb:login-button id="fb_login"
   scope="public_profile,email"
   onlogin="checkLoginState();">
-</fb:login-button>
+</fb:login-button> --}}
 
