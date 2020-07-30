@@ -21,9 +21,11 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^5.1.0",
+    "googleapis": "^57.0.0",
     "handlebars": "^4.7.6",
+    "mysql": "^2.18.1",
     "mysql2": "^2.1.0",
-    "sequelize": "^4.41.2",
+    "sequelize": "^4.44.4",
     "twit": "^2.2.11"
   }
 }
