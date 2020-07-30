@@ -1,6 +1,6 @@
 <div class='jumbo'>
 <h1>Middle Ground</h1>
-<h2>Looking into Social Media to find some middle ground.</h2>
+<p class='tagline'>Looking into Social Media to find some middle ground.</p>
 </div>
 
 <div class='div1'>
@@ -8,22 +8,22 @@
 <h2>Enter Your Twitter Handle</h2>
   <div class="form-group">
     <input type="text" id="feed_name" name="feed_name"><br>
-    <button type="submit">Analyze</button>
+    <button type="submit" id='submitAccountName'>Analyze</button>
   </div>
 
 <br><hr><br>
 <h2>Enter a topic to seach on</h2>
   <div class="form-group">
     <input type="text" id="keyword" name="keyword"><br>
-    <button type="submit">Ananylze</button>
+    <button type="submit" id="submitKeyword">Ananylze</button>
   </div>
 
   
 </form>
 </div>
 </div>
-<fb:login-button 
+{{!-- <fb:login-button id="fb_login"
   scope="public_profile,email"
   onlogin="checkLoginState();">
-</fb:login-button>
+</fb:login-button> --}}
 

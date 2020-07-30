@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     	<script src="https://code.jquery.com/jquery.js"></script>
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
+	<script src="/assets/js/index.js"></script>
     <title>MiddleGround</title>
+    
 </head>
 <body>
-  {{!-- our app id: 951106048648578 --}}
+  {{!-- our FB app id: 951106048648578 --}}
 <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -21,8 +22,13 @@
     });
   };
 </script>
+
+{{!-- Facebook SDK for FB login --}}
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
     
  	{{{ body }}}   
+
+
 </body>
+
 </html>

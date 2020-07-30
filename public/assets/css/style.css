@@ -1,10 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+
 html {
+    font-family: 'Lora', serif;
 }
 
 body {
-
+    width:100%;
+    box-sizing: border-box;
+    margin:auto;
 }
 
+.tagline {
+    font-style:italic;
+    margin:0;
+}
+
+/* Styles for Mobile */
+/*  Mobile -first design! */
+
+.jumbo {
+    text-align:center;
+    width:100%;
+    box-sizing: border-box;
+    padding-top:100px;
+    background-color:#eeeeee;
+    padding-bottom:50px;
+}
+
+.jumbo h1 {
+    margin:0;
+}
 .div1 {
     text-align:center;
+}
+
+/* Styles for Larger screens */
+@media only screen and (min-width:700px) {
+
+    body {
+      
+    }
+
 }
