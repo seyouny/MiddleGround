@@ -14,7 +14,7 @@ const {google} = require('googleapis');
           scopes: [],
         });
 
-     
+
         // doing the magic !!
         const res = await factchecktools.claims.search({
           languageCode: 'English',
@@ -23,14 +23,28 @@ const {google} = require('googleapis');
         });
         console.log(res.data);
       }
-
-    ///////////////////////////////////
-    //res.data into json then parse it
-    // need to add json data .. 
-    ////////////////////////////////////
-
-     
       main().catch(e => {
         console.error(e);
         throw e;
       });
+      
+      
+      {
+        "claims" [
+          {
+            "text": [],
+            "claimReview": [
+              {
+                "publisher": {
+                  "name": "",
+                  "site": "",
+                },
+                "url": "",
+                "title": "",
+                "textualRating": "",
+                "languageCode": "en"
+              }
+            ]
+          }
+        ]
+      }
