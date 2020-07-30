@@ -2,5 +2,6 @@
 node_modules
 design
 barts_api_tests
+package-lock.json
 
 
