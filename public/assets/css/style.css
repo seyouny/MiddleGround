@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+
+html {
+    font-family: 'Lora', serif;
+    background-color:#dddddd;
+}
+
+body {
+    width:100%;
+    box-sizing: border-box;
+    margin:auto;
+}
+
+h2 {
+    margin:0;
+}
+.logo {
+    width:450px;
+}
+.tagline {
+    font-style:italic;
+    margin:0;
+}
+
+form {
+    margin:0;
+}
+/* Styles for Mobile */
+/*  Mobile -first design! */
+
+.jumbo {
+    text-align:center;
+    width:100%;
+    box-sizing: border-box;
+    padding-top:100px;
+    background-color:#eeeeee;
+    padding-bottom:50px;
+}
+
+.jumbo h1 {
+    margin:0;
+}
+.div1 {
+    text-align:center;
+    background-color:#eeeeee;
+    margin:0;
+    padding-bottom:40px;
+}
+
+.div2 {
+    padding-top:40px;
+    text-align:center;
+    background-color:#dddddd;
+    margin:0;
+}
+
+.basicInput {
+    font-size:1.2em;
+    border-radius:4px;
+    border:none;
+    padding:12px;
+    outline:none;
+    margin-top:18px;
+}
+.basicInput:hover {
+    outline:2px solid rgb(104, 167, 250);
+ 
+}
+.basicInput:active {
+    outline:2px solid rgb(104, 167, 250);
+  
+}
+.submitBtn {
+    border-radius:8px;
+    padding-left:30px;
+    padding-right:30px;
+    padding-top:8px;
+    padding-bottom:8px;
+    font-size:1.15em;
+    font-weight: 600;
+    color:white;
+    text-transform: uppercase;
+    border:none;
+    box-shadow:0 0 4px rgba(0,0,0,.4);
+    margin-top:18px;
+    outline:none;
+    cursor: pointer;
+    user-select: none;
+}
+.submitBtn:hover {
+    outline:none;
+}
+.submitBtn:active {
+    background-color:rgb(62, 153, 238);
+    outline:none;
+}
+
+.accountNameSubmit {
+    background-color:rgb(62, 118, 238);
+}
+
+.accountNameSubmit:hover {
+    background-color:rgb(62, 153, 238);
+}
+.accountNameSubmit:active {
+    background-color:rgb(62, 153, 238);
+}
+.keywordSubmit {
+    background-color:rgb(130, 130, 130);
+}
+.keywordSubmit:hover {
+    background-color:rgb(89, 89, 89);
+}
+.keywordSubmit:active {
+    background-color:rgb(130, 130, 130);
+}
+/* Styles for Larger screens */
+@media only screen and (min-width:700px) {
+
+    body {
+      
+    }
+
+}
