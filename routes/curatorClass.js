@@ -39,7 +39,7 @@ class Stream {
            // console.log("searching: " + postText);
 
             if ( postText.toLowerCase().includes(this.keyword) ){
-                console.log(post);
+             //   console.log(post);
                 newArray.push(post);
             }
         });

@@ -1,17 +1,19 @@
+<div class='analysis'>
+   <a href='/'> <img src='assets/images/logo.png' class='logo'></a><br>
 
 
 <div class='blueFeed'>
     blues:
-  {{#each blues}}
-      {{ text }}
+  {{#each cards}}
+      {{ dataValues.text }}
+      {{ dataValues.keyword }} 
+      {{ dataValues.bias }}
       item:
   {{/each}}
 </div>
 
 <div class='redFeed'>
-    reds:
-  {{#each reds}}
-      {{ text }}  item:
-  {{/each}}
-</div>
 
+
+
+</div>

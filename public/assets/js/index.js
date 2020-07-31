@@ -45,15 +45,31 @@ $(document).ready(function() {
 
 // Generate an ajax Post Request to send to the keyword to the server 
 function AnalyzeKeyword(keyword) {
-    $.post("/api/analyze_keyword", { keyword: keyword }
-    ).then(function(data) {
-      //  window.location.replace("/keyword_analysis", data);
-      //  blueIds: blueIds, redIds: redIds
+    // $.post("/api/analyze_keyword", { keyword: keyword }
+    // ).then(function(data) {
+    //   //  window.location.replace("/keyword_analysis", data);
+    //   //  blueIds: blueIds, redIds: redIds
 
-            // passing the post IDS on to the keyword_analysis route
+    //         // passing the post IDS on to the keyword_analysis route
+    //     //console.log(data);
+    //         window.location.replace("/keyword_analysis", data);
+    //   });
+    $.ajax({
+        method: "POST",
+        url: "/api/analyze_keyword",
+        data: {keyword: keyword}
+    }).then( function(dataReturned) {
+       // console.log("data returned: " + dataReturned);
 
-            window.location.replace("/keyword_analysis");
-      });
+       window.location.replace("/keyword_analysis", dataReturned);
+       
+        // $.ajax({
+        //     method: "GET",
+        //     url: "/keyword_analysis",
+        //  });
+        }
+    );
+
 }
 
 function handleLoginErr(err) {
