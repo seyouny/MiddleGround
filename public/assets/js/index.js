@@ -24,17 +24,28 @@ $(document).ready(function() {
 // Generate an ajax Post Request to send the keyword to the server 
 function AnalyzeKeyword(keyword) {
 
+    if (keyword) {
     $.ajax({
         method: "POST",
         url: "/api/analyze_keyword",
         data: {keyword: keyword}
         }).then( function(dataReturned) {
 
-            // Then reload the page on the /keyword_analysis route
-            window.location.replace("/keyword_analysis", dataReturned);
+            console.log("Data returned: " + dataReturned);
+            // We don't do anything with the dataReturned, which I think is odd...
 
+            // Then reload the page on the /keyword_analysis route
+            window.location.replace("/keyword_analysis" + "?keyword=" + keyword);
+            // $.ajax( {
+            //     method: "GET",
+            //     url: "/keyword_analysis",
+            //     data:  {keyword: keyword}
+            // }).then( function() {});
         }
-    );
+    ).catch( function(err) {
+        handleLoginErr(err);
+    });
+}
 
 }
 
