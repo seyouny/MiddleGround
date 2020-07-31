@@ -1,4 +1,5 @@
 <div class='analysis'>
+<<<<<<< HEAD
    <a href='/'> <img src='assets/images/logo.png' class='logo'></a><br>
 <h1>Topic: 
 {{ keyword }}</h1>
@@ -14,24 +15,52 @@
         
          
         </div>
+=======
+
+  <div class="jumbo">
+    <a href='/'> <img src='assets/images/logo.png' class='logo'></a><br>
+  </div>
+  <div class="topic">
+    <h1>Topic:
+      {{ keyword }}</h1>
+  </div>
+  <div class="factCheck">
+    <p>Google Fact Check Results: </p>
+    <p>Claim: Masks Not Needed</p>
+    <p>Publisher: Trump</p>
+    <p>Title: Tweet #10,976</p>
+    <p>Fact Check Rating: Mostly False</p>
+    {{!-- fact check here --}}
+  </div>
+  <div class='blueFeed group'>
+    {{#each blues}}
+>>>>>>> 48c87468b3abda13c3d13183a4087ec5bf8b84f3
+
+    <div class='card'>
+      <img src='{{ dataValues.image }}' class='cardImage'>
+      <p class='cardText'> {{ dataValues.text }}</p>
 
 
-  {{/each}}
-
-</div>
-
-<div class='redFeed group'>
-  {{#each reds}}
-
-        <div class='card'>
-            <img src='{{ dataValues.image }}' class='cardImage'>
-            <p class='cardText'> {{ dataValues.text }}</p>
-          
-            
-        </div>
+    </div>
 
 
-  {{/each}}
+    {{/each}}
+
+  </div>
+
+  <div class='redFeed group'>
+    {{#each reds}}
+
+    <div class='card'>
+      <img src='{{ dataValues.image }}' class='cardImage'>
+      <p class='cardText'> {{ dataValues.text }}</p>
 
 
+    </div>
+
+
+    {{/each}}
+
+
+  </div>
 </div>

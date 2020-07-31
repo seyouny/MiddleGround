@@ -18,22 +18,20 @@ module.exports = function(app) {
         var stream = new Stream(keyword);
         var blueFeed, redFeed;
 
+       
+
         // Get the Blue Feed from the stream
         stream.getBlueFeed( async function(bluedata) {
             blueFeed = bluedata;
+            console.log("BlueCount: " + blueFeed.length);
 
             // When the blue feed has returned to us, then get the Red Feed
             stream.getRedFeed( function(reddata) {
                 redFeed = reddata;
-
-                console.log("Red posts: " + redFeed.length);
-                console.log("Blue posts: " + blueFeed.length);
+                console.log("RedCount: " + redFeed.length);
             
                 // Now that we have both the blue and the red feeds - we can store them 
                 // as posts in our DB
-
-                var blueIds = [];
-
                 blueFeed.forEach( async function(postItem) {
 
                     var newPost = {
@@ -82,7 +80,7 @@ module.exports = function(app) {
           
                  });
 
-      
+                 //console.log("BlueCount: " + blueFeed.count + ", Red: " + redFeed.count);
                 // Return an array of post id's to the Client Side JS
                 res.json( {});
               // res.end( );
