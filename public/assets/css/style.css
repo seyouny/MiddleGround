@@ -39,17 +39,10 @@ form {
     color: whitesmoke;
     padding-top:100px;
     background-color:#eeeeee;
-<<<<<<< HEAD
-    padding-bottom:50px;
-    background-image:url(../images/handshake.jpg);
-    background-position:50% 50%;
-    
-=======
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/handshake.jpg");
     background-size: 100%;
     background-position: 50% 50%;
     padding-bottom:20px;
->>>>>>> 453fa9075d6a1d140816e2764aadfa4541801865
 }
 
 .jumbo h1 {
