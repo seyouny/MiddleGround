@@ -35,12 +35,13 @@ function AnalyzeKeyword(keyword) {
             // We don't do anything with the dataReturned, which I think is odd...
 
             // Then reload the page on the /keyword_analysis route
+            if (dataReturned.error === "NO POSTS FOUND") {
+                // window.location.replace("/");
+                $("#error").show();
+            } else {
+                $("#error").hide();
             window.location.replace("/keyword_analysis" + "?keyword=" + keyword);
-            // $.ajax( {
-            //     method: "GET",
-            //     url: "/keyword_analysis",
-            //     data:  {keyword: keyword}
-            // }).then( function() {});
+            }
         }
     ).catch( function(err) {
         handleLoginErr(err);

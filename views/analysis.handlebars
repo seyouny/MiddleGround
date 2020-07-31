@@ -4,33 +4,30 @@
 {{ keyword }}</h1>
 <h3>Fact Check: </h3>
 {{!-- fact check here --}}
+
+ {{!-- If there are posts to display --}}
+{{#if count}}   
 <div class='blueFeed group'>
   {{#each blues}}
-
         <div class='card'>
             <img src='{{ dataValues.image }}' class='cardImage'>
-            <p class='cardText'> {{ dataValues.text }}</p>
-        
-         
+            <p class='cardText'> {{ dataValues.text }}</p> 
+            {{!-- <img src='{{ dataValues.thumbnail }}' class='thumbnail'> --}}
         </div>
-
-
   {{/each}}
-
 </div>
 
 <div class='redFeed group'>
   {{#each reds}}
-
         <div class='card'>
             <img src='{{ dataValues.image }}' class='cardImage'>
-            <p class='cardText'> {{ dataValues.text }}</p>
-          
-            
+            <p class='cardText'> {{ dataValues.text }}</p>      
         </div>
-
-
   {{/each}}
-
-
 </div>
+{{/if}}
+
+
+{{#unless count}}
+<p>There aren't any posts on this topic in our feed.</p>
+    {{/unless}}
