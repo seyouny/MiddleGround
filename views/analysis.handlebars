@@ -1,4 +1,21 @@
 <div class='analysis'>
+<<<<<<< HEAD
+   <a href='/'> <img src='assets/images/logo.png' class='logo'></a><br>
+<h1>Topic: 
+{{ keyword }}</h1>
+<h3>Fact Check: </h3>
+{{#each googleInfo}}
+<p>{{textualRating}}</p>
+<div class='blueFeed group'>
+  {{#each blues}}
+    
+        <div class='card'>
+            <img src='{{ dataValues.image }}' class='cardImage'>
+            <p class='cardText'> {{ dataValues.text }}</p>
+        
+         
+        </div>
+=======
 
   <div class="jumbo">
     <a href='/'> <img src='assets/images/logo.png' class='logo'></a><br>
@@ -17,6 +34,7 @@
   </div>
   <div class='blueFeed group'>
     {{#each blues}}
+>>>>>>> 48c87468b3abda13c3d13183a4087ec5bf8b84f3
 
     <div class='card'>
       <img src='{{ dataValues.image }}' class='cardImage'>

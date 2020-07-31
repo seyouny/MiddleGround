@@ -1,8 +1,18 @@
 // requiring google api 
 // requiring factchecktools 
-
+var express = require("express");
+var router = express.Router();
+const apiRoutes = require("./api-routes");
+var db = require("../models");
 const {google} = require('googleapis');
-      const factchecktools = google.factchecktools('v1alpha1');
+
+
+
+function googleQuery() {
+  var googleArray = [];
+      // app.get("keyword_analysis",function(req,res){
+      //   var keyword = req.query.keyword;
+        const factchecktools = google.factchecktools('v1alpha1');
      
         // api key
         // AIzaSyAvfhWexV2bqPbvo1UNth0pJ4Tw-C479cA
@@ -18,23 +28,31 @@ const {google} = require('googleapis');
         // doing the magic !!
         const res = await factchecktools.claims.search({
           languageCode: 'English',
-          query: 'the world is flat',
-          key: 'AIzaSyAvfhWexV2bqPbvo1UNth0pJ4Tw-C479cA',
+          query: " ",
+          key: 'AIzaSyAPRblVUYQKXe26yrvEXPM5u9CLjSSX9zc',
         });
-        console.log(res.data);
+        
+        var googleInfo = res.data
+        for (i in res.data.claims){
+          googleArray.push(res.data.claims[i].claimReview)
+        }
       }
       main().catch(e => {
         console.error(e);
         throw e;
       });
-      
+      return googleArray;
 
+      // })
+    } 
+    module.exports = googleQuery;
       
-      // {
+    
+      // [{
       //   "claims" [
       //     {
       //       "text": [],
-      //       "claimReview": [
+      //       "claimReview": 
       //         {
       //           "publisher": {
       //             "name": "",
@@ -45,8 +63,8 @@ const {google} = require('googleapis');
       //           "textualRating": "",
       //           "languageCode": "en"
       //         }
-      //       ]
+            
       //     }
       //   ]
-      // }
+      // }]
 
