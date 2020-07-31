@@ -16,6 +16,7 @@ module.exports = function(app) {
        // console.log('About to render the analysis:' + JSON.stringify( req.body ));
         //dataObject = req.body;
         
+        
         db.Post.findAll({}).then(function(dbPosts) {
             // We have access to the todos as an argument inside of the callback function
 
@@ -24,7 +25,7 @@ module.exports = function(app) {
                 cards: dbPosts
               };
             res.render("analysis", hbsObject);
-         // console.log(dbPosts);
+   
           });
   
     });
