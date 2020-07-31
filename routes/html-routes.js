@@ -36,9 +36,16 @@ module.exports = function(app) {
                 {
                   hbsObject.count = 0;
                   console.log("NO POSTS FOUND");
-                  res.json({error:"NO POSTS FOUND"});
+               
+                  // alert("No posts found on that topic.");
+                  
+                  res.render("error", {error: "NO POSTS FOUND"});
+                  
+
+                 // res.json({error:"NO POSTS FOUND"});
                 } else {
                   hbsObject.count = bluePosts.length; + redPosts.length;
+               
                   res.render("analysis", hbsObject);
                 }
                 
