@@ -36,11 +36,7 @@ function AnalyzeKeyword(keyword) {
 
             // Then reload the page on the /keyword_analysis route
             window.location.replace("/keyword_analysis" + "?keyword=" + keyword);
-            // $.ajax( {
-            //     method: "GET",
-            //     url: "/keyword_analysis",
-            //     data:  {keyword: keyword}
-            // }).then( function() {});
+        
         }
     ).catch( function(err) {
         handleLoginErr(err);

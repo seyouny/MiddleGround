@@ -36,6 +36,9 @@ form {
     padding-top:100px;
     background-color:#eeeeee;
     padding-bottom:50px;
+    background-image:url(../images/handshake.jpg);
+    background-position:50% 50%;
+    
 }
 
 .jumbo h1 {
