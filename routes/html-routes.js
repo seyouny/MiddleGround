@@ -11,4 +11,10 @@ module.exports = function(app) {
         res.render("index", dataObject);
 
     });
+    app.get("/keyword_analysis", function(req, res) {
+    
+        dataObject = req.body;
+        res.render("analysis", dataObject);
+
+    });
 };

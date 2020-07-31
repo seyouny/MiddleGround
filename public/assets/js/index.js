@@ -47,7 +47,7 @@ $(document).ready(function() {
 function AnalyzeKeyword(keyword) {
     $.post("/api/analyze_keyword", { keyword: keyword }
     ).then(function(data) {
-        window.location.replace("/keyword_analysis");
+        window.location.replace("/keyword_analysis", data);
       });
 
 }

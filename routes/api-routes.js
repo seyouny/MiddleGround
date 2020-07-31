@@ -29,7 +29,11 @@ module.exports = function(app) {
             stream.getRedFeed( function(reddata) {
                 redFeed = reddata;
                 console.log("Blue feed: " + blueFeed);
-               // res.render("analysis", {blue:blueFeed, red:redFeed});
+                var hbsObject = {
+                    blues: blueFeed,
+                    reds: redFeed
+                  };
+                res.render("analysis", hbsObject );
 
             })
         })
