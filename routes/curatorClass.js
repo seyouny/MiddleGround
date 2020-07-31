@@ -31,25 +31,21 @@ class Stream {
 
     keywordFilter(feed) {
         var newArray = [];
-        //console.log(feed);
         console.log("Original feed post count: " + feed.postCount);
 
         feed.posts.forEach(post => {
             var postText = post.text;
-           // console.log("searching: " + postText);
 
             if ( postText.toLowerCase().includes(this.keyword) ){
-             //   console.log(post);
                 newArray.push(post);
             }
         });
-        //console.log("Filtered post count: "+ newArray.length);
+    
         return newArray;
     }
 
     getCuratorFeed (FeedId, cb) {
         let queryString = endptURL + FeedId + "/posts?api_key=" + API_Key;
-       // console.log("Query String", queryString);
         axios.get(queryString)
           .then(response => {
               switch(FeedId) {
@@ -57,8 +53,6 @@ class Stream {
                     var redFeed = response.data;
                     redFeed = this.keywordFilter(redFeed);
                     this.redFeed = redFeed;
-                   // console.log('Red Feed Data',redFeed);
-                 //  console.log("Red feed count: " + redFeed.length );
                     cb( redFeed );
                     break;
     
@@ -66,8 +60,6 @@ class Stream {
                     var blueFeed = response.data;
                     blueFeed = this.keywordFilter(blueFeed);
                     this.blueFeed = blueFeed;
-                   // console.log('Blue Feed Data',response.data);
-                 //  console.log("Blue feed count: " + blueFeed.length );
                     cb( blueFeed );
                     break;
     
