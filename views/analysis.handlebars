@@ -4,6 +4,9 @@
 {{ keyword }}</h1>
 <h3>Fact Check: </h3>
 {{!-- fact check here --}}
+
+ {{!-- If there are posts to display --}}
+{{#if count}}   
 <div class='blueFeed group'>
   {{#each blues}}
         <div class='card'>
@@ -22,3 +25,9 @@
         </div>
   {{/each}}
 </div>
+{{/if}}
+
+
+{{#unless count}}
+<p>There aren't any posts on this topic in our feed.</p>
+    {{/unless}}

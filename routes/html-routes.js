@@ -32,8 +32,16 @@ module.exports = function(app) {
                     keyword: keyword
                   };
     
-    
-                res.render("analysis", hbsObject);
+                if ((bluePosts.length < 1) || (redPosts.length<1))
+                {
+                  hbsObject.count = 0;
+                  console.log("NO POSTS FOUND");
+                  res.json({error:"NO POSTS FOUND"});
+                } else {
+                  hbsObject.count = bluePosts.length; + redPosts.length;
+                  res.render("analysis", hbsObject);
+                }
+                
             })
      
    
