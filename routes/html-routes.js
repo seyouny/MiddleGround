@@ -19,10 +19,23 @@ module.exports = function(app) {
           }).then(function(bluePostsReturned) {
             bluePosts = bluePostsReturned;
 
-            var hbsObject = {
-                cards: bluePosts
-              };
-            res.render("analysis", hbsObject);
+
+            db.Post.findAll( {where: {
+                bias: 'red',
+                keyword: keyword
+              }}).then( function(redPostsReturned) {
+
+                redPosts = redPostsReturned;
+                var hbsObject = {
+                    blues: bluePosts,
+                    reds: redPosts,
+                    keyword: keyword
+                  };
+    
+    
+                res.render("analysis", hbsObject);
+            })
+     
    
           });
   
