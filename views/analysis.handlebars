@@ -1,19 +1,34 @@
 <div class='analysis'>
    <a href='/'> <img src='assets/images/logo.png' class='logo'></a><br>
+<h1>Topic: 
+{{ keyword }}</h1>
+<div class='blueFeed group'>
+  {{#each blues}}
+
+        <div class='card'>
+            <img src='{{ dataValues.image }}' class='cardImage'>
+            <p class='cardText'> {{ dataValues.text }}</p>
+        
+         
+        </div>
 
 
-<div class='blueFeed'>
-    blues:
-  {{#each cards}}
-      {{ dataValues.text }}
-      {{ dataValues.keyword }} 
-      {{ dataValues.bias }}
-      item:
   {{/each}}
+
 </div>
 
-<div class='redFeed'>
+<div class='redFeed group'>
+  {{#each reds}}
 
+        <div class='card'>
+            <img src='{{ dataValues.image }}' class='cardImage'>
+            <p class='cardText'> {{ dataValues.text }}</p>
+          
+            
+        </div>
+
+
+  {{/each}}
 
 
 </div>

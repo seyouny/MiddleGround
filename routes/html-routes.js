@@ -5,27 +5,44 @@ var db = require("../models");
 // Import the models to use its database functions.
 module.exports = function(app) {
     // Create all our routes and set up logic within those routes where required.
-    app.get("/", function(req, res) {
-    
-        dataObject = {}; // nothing for now
 
-        res.render("index", dataObject);
-
-    });
     app.get("/keyword_analysis", function(req, res) {
-       // console.log('About to render the analysis:' + JSON.stringify( req.body ));
-        //dataObject = req.body;
-        
-        db.Post.findAll({}).then(function(dbPosts) {
-            // We have access to the todos as an argument inside of the callback function
+       
+       console.log("Request.params: " + JSON.stringify(req.query) );
+        var keyword = req.query.keyword;
+        var bluePosts = [];
+        db.Post.findAll({
+            where: {
+              bias: 'blue',
+              keyword: keyword
+            }
+          }).then(function(bluePostsReturned) {
+            bluePosts = bluePostsReturned;
 
-            console.log(dbPosts);
-            var hbsObject = {
-                cards: dbPosts
-              };
-            res.render("analysis", hbsObject);
-         // console.log(dbPosts);
+
+            db.Post.findAll( {where: {
+                bias: 'red',
+                keyword: keyword
+              }}).then( function(redPostsReturned) {
+
+                redPosts = redPostsReturned;
+                var hbsObject = {
+                    blues: bluePosts,
+                    reds: redPosts,
+                    keyword: keyword
+                  };
+    
+    
+                res.render("analysis", hbsObject);
+            })
+     
+   
           });
   
+    });
+    app.get("/*", function(req, res) {
+
+        res.render("index");
+
     });
 };

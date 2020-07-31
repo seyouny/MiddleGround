@@ -8,15 +8,6 @@ const Stream = require("./curatorClass");
 // Import the models to use its database functions.
 module.exports = function(app) {
     // Create all our routes and set up logic within those routes where required.
-    app.get("/api/analyze_keyword", function(req, res) {
-    
-        // dataObject = {}; // nothing for now
-
-        // var blueFeed = curator.blueFeed;
-        // var redFeed = curator.redFeed;
-        // res.render("analysis", {blue:blueFeed, red:redFeed});
-
-    });
 
 
     app.post("/api/analyze_keyword", function(req, res) {
@@ -64,44 +55,37 @@ module.exports = function(app) {
 
                    await db.Post.create(newPost);
                    
-                //    .then( function(result) {
-                //              blueIds.push(result.insertId);
-                //     }).catch(function(err) {
-                //         console.log(err);
-                //         //  res.json(err);
-                //         });
+          
                  });
 
-                 var redIds = [];
+                 redFeed.forEach( async function(postItem) {
 
-                //  redFeed.forEach( function(postItem) {
+                    var newPost = {
+                        curator_id: postItem.id,
+                        keyword: keyword,
+                        bias: "red",
+                        text: postItem.text,
+                        image: postItem.image,
+                        likes: postItem.likes,
+                        comments: postItem.comments,
+                        url: postItem.url,
+                        thumbnail: postItem.thumbnail,
+                        has_media: postItem.has_media,
+                        user_image: postItem.user_image,
+                        network_name: postItem.network_name,
+                        user_url: postItem.user_url
 
-                //     var newPost = {
-                //         curator_id: postItem.id,
-                //         keyword: postItem.keyword,
-                //         bias: "red",
-                //         text: postItem.text,
-                //         image: postItem.image,
-                //         likes: postItem.likes,
-                //         comments: postItem.comments,
-                //         url: postItem.url,
-                //         thumbnail: postItem.thumbnail,
-                //         has_media: postItem.has_media,
-                //         user_image: postItem.user_image,
-                //         network_name: postItem.network_name,
-                //         user_url: postItem.user_url
+                    };
 
-                //     }
-                //    db.Post.create(newPost).then( function(result) {
-                //              redIds.push(result.insertId);
-                //     }).catch(function(err) {
-                //         console.log(err);
-                //         //  res.json(err);
-                //         });
-                // });
+                   await db.Post.create(newPost);
+                   
+          
+                 });
+
       
                 // Return an array of post id's to the Client Side JS
-                res.json({ stuff: "YEAH"});
+                res.json( {});
+              // res.end( );
                
             })
         })
@@ -115,3 +99,4 @@ module.exports = function(app) {
 
     });
 };
+
