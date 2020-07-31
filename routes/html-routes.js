@@ -1,11 +1,19 @@
 var express = require("express");
-
+var googleInfo = require ('./google-api.js');
 var router = express.Router();
 var db = require("../models");
+const apiRoutes = require("./api-routes");
 // Import the models to use its database functions.
 module.exports = function(app) {
     // Create all our routes and set up logic within those routes where required.
 
+    
+    app.get("keyword_analysis",function(req,res){
+      var keyword = req.query.keyword;
+      var alldata = 
+      res.render("analysis", hbsObject);
+
+    })
     app.get("/keyword_analysis", function(req, res) {
        
        console.log("Request.params: " + JSON.stringify(req.query) );
@@ -29,7 +37,8 @@ module.exports = function(app) {
                 var hbsObject = {
                     blues: bluePosts,
                     reds: redPosts,
-                    keyword: keyword
+                    keyword: keyword,
+                    googleInfo: googleInfo(keyword)
                   };
     
     

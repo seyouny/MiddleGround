@@ -3,10 +3,11 @@
 <h1>Topic: 
 {{ keyword }}</h1>
 <h3>Fact Check: </h3>
-{{!-- fact check here --}}
+{{#each googleInfo}}
+<p>{{textualRating}}</p>
 <div class='blueFeed group'>
   {{#each blues}}
-
+    
         <div class='card'>
             <img src='{{ dataValues.image }}' class='cardImage'>
             <p class='cardText'> {{ dataValues.text }}</p>
