@@ -4,31 +4,18 @@
 {{ keyword }}</h1>
 <div class='blueFeed group'>
   {{#each blues}}
-
         <div class='card'>
             <img src='{{ dataValues.image }}' class='cardImage'>
-            <p class='cardText'> {{ dataValues.text }}</p>
-        
-         
+            <p class='cardText'> {{ dataValues.text }}</p> 
         </div>
-
-
   {{/each}}
-
 </div>
 
 <div class='redFeed group'>
   {{#each reds}}
-
         <div class='card'>
             <img src='{{ dataValues.image }}' class='cardImage'>
-            <p class='cardText'> {{ dataValues.text }}</p>
-          
-            
+            <p class='cardText'> {{ dataValues.text }}</p>      
         </div>
-
-
   {{/each}}
-
-
 </div>

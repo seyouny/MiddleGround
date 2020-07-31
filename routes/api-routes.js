@@ -25,15 +25,9 @@ module.exports = function(app) {
             // When the blue feed has returned to us, then get the Red Feed
             stream.getRedFeed( function(reddata) {
                 redFeed = reddata;
-
-                console.log("Red posts: " + redFeed.length);
-                console.log("Blue posts: " + blueFeed.length);
             
                 // Now that we have both the blue and the red feeds - we can store them 
                 // as posts in our DB
-
-                var blueIds = [];
-
                 blueFeed.forEach( async function(postItem) {
 
                     var newPost = {
