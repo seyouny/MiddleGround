@@ -16,7 +16,7 @@ var queryString;
 class Stream {
 
     constructor(keyword) {
-        this.keyword = keyword;
+        this.keyword = keyword.toLowerCase();
         this.blueFeed;
         this.redFeed;
     }
@@ -31,31 +31,43 @@ class Stream {
 
     keywordFilter(feed) {
         var newArray = [];
-        feed.forEach(post => {
+        //console.log(feed);
+        console.log("Original feed post count: " + feed.postCount);
+
+        feed.posts.forEach(post => {
             var postText = post.text;
-            if ( postText.includes(this.keyword) ){
+           // console.log("searching: " + postText);
+
+            if ( postText.toLowerCase().includes(this.keyword) ){
+                console.log(post);
                 newArray.push(post);
             }
         });
+        //console.log("Filtered post count: "+ newArray.length);
         return newArray;
     }
 
-    getCuratorFeed (FeedId) {
+    getCuratorFeed (FeedId, cb) {
         let queryString = endptURL + FeedId + "/posts?api_key=" + API_Key;
-        console.log("Query String", queryString);
+       // console.log("Query String", queryString);
         axios.get(queryString)
           .then(response => {
               switch(FeedId) {
                 case redFeedId:
                     var redFeed = response.data;
                     redFeed = this.keywordFilter(redFeed);
-                    console.log('Red Feed Data',redFeed);
+                    this.redFeed = redFeed;
+                   // console.log('Red Feed Data',redFeed);
+                 //  console.log("Red feed count: " + redFeed.length );
                     cb( redFeed );
                     break;
     
                 case blueFeedId: 
                     var blueFeed = response.data;
-                    console.log('Blue Feed Data',response.data);
+                    blueFeed = this.keywordFilter(blueFeed);
+                    this.blueFeed = blueFeed;
+                   // console.log('Blue Feed Data',response.data);
+                 //  console.log("Blue feed count: " + blueFeed.length );
                     cb( blueFeed );
                     break;
     

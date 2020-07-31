@@ -26,6 +26,7 @@ app.use(express.static("public"));
 // require("./** folder name ** / ** file name ** )(app); // google
 // require("./** folder name ** / ** files name **)(app); // twitter
 require("./routes/html-routes")(app);
+require("./routes/api-routes")(app);
 
 // syncing the sequelize models and then starting the express app
 db.sequelize.sync({ force: true }).then(function() {
