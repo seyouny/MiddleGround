@@ -10,11 +10,15 @@ body {
     width:100%;
     box-sizing: border-box;
     margin:auto;
+    background-color: darkgray;
+}
+h1 {
+    font-size: 2em;
 }
 
 h2 {
     margin:0;
-    font-size: 14px;
+    font-size: .8em;
     font-style: italic;
     color: grey;
 }
@@ -42,7 +46,7 @@ form {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/handshake.jpg");
     background-size: 100%;
     background-position: 50% 50%;
-    padding-bottom:20px;
+    box-sizing: border-box;
 }
 
 .jumbo h1 {
@@ -77,6 +81,13 @@ form {
 .basicInput:active {
     outline:2px solid rgb(104, 167, 250);
   
+}
+
+.factCheck {
+    background-color: darkgray;
+    box-sizing: border-box;
+    padding: 1%;
+    color: rgba(255, 255, 255, .8)
 }
 
 footer {
@@ -125,6 +136,13 @@ footer {
     text-decoration: none;
 }
 
+.topic {
+    background-color: teal;
+    font-size: .8em;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.5)
+}
+
 .accountNameSubmit {
     background-color:rgb(62, 118, 238);
 }
@@ -147,6 +165,7 @@ footer {
 
 .analysis {
     text-align:center;
+    background-color: teal;
 
 }
 .analysis .logo {
