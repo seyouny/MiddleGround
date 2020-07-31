@@ -28,7 +28,7 @@ module.exports = function(app) {
         var blueFeed, redFeed;
 
         // Get the Blue Feed from the stream
-        stream.getBlueFeed( function(bluedata) {
+        stream.getBlueFeed( async function(bluedata) {
             blueFeed = bluedata;
 
             // When the blue feed has returned to us, then get the Red Feed
@@ -43,39 +43,66 @@ module.exports = function(app) {
 
                 var blueIds = [];
 
-                blueFeed.forEach( postItem => {
-
-                    console.log(postItem.text);
-
-
-                    // db.Post.create(["curator_id","keyword","bias","text","image","likes","comments","url","thumbnail","has_media","user_image","network_name","user_url"], [
-                    //     postItem.id, postItem.keyword, "blue", postItem.text, postItem.image, postItem.likes, postItem.comments, postItem.url, postItem.thumbnail, postItem.has_media, postItem.user_image, postItem.network_name, postItem.user_url]).then( function(result) {
-                    //          blueIds.push(result.insertId);
-                    // });
+                blueFeed.forEach( async function(postItem) {
 
                     var newPost = {
                         curator_id: postItem.id,
-                        keyword: postItem.keyword,
+                        keyword: keyword,
                         bias: "blue",
                         text: postItem.text,
-                        
-                    }
-                    db.Post.create(newPost).then( function(result) {
-                             blueIds.push(result.insertId);
-                    });
+                        image: postItem.image,
+                        likes: postItem.likes,
+                        comments: postItem.comments,
+                        url: postItem.url,
+                        thumbnail: postItem.thumbnail,
+                        has_media: postItem.has_media,
+                        user_image: postItem.user_image,
+                        network_name: postItem.network_name,
+                        user_url: postItem.user_url
+
+                    };
+
+                   await db.Post.create(newPost);
+                   
+                //    .then( function(result) {
+                //              blueIds.push(result.insertId);
+                //     }).catch(function(err) {
+                //         console.log(err);
+                //         //  res.json(err);
+                //         });
                  });
 
-                 //var redIds = [];
-                // redFeed.forEach( postItem => {
-                //     db.Post.create(["curator_id","keyword","bias","text","image","likes","comments","url","thumbnail","has_media","user_image","network_name","user_url"], [
-                //         postItem.id, postItem.keyword, "red", postItem.text, postItem.image, postItem.likes, postItem.comments, postItem.url, postItem.thumbnail, postItem.has_media, postItem.user_image, postItem.network_name, postItem.user_url       ]).then( function(result) {
-                //             redIds.push(result.insertId);
-                //    });
+                 var redIds = [];
+
+                //  redFeed.forEach( function(postItem) {
+
+                //     var newPost = {
+                //         curator_id: postItem.id,
+                //         keyword: postItem.keyword,
+                //         bias: "red",
+                //         text: postItem.text,
+                //         image: postItem.image,
+                //         likes: postItem.likes,
+                //         comments: postItem.comments,
+                //         url: postItem.url,
+                //         thumbnail: postItem.thumbnail,
+                //         has_media: postItem.has_media,
+                //         user_image: postItem.user_image,
+                //         network_name: postItem.network_name,
+                //         user_url: postItem.user_url
+
+                //     }
+                //    db.Post.create(newPost).then( function(result) {
+                //              redIds.push(result.insertId);
+                //     }).catch(function(err) {
+                //         console.log(err);
+                //         //  res.json(err);
+                //         });
                 // });
       
                 // Return an array of post id's to the Client Side JS
-               // res.json({ blueIds: blueIds, redIds: redIds});
-               res.end();
+                res.json({ stuff: "YEAH"});
+               
             })
         })
        
