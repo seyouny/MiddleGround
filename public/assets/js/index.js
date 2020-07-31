@@ -47,7 +47,15 @@ $(document).ready(function() {
 function AnalyzeKeyword(keyword) {
     $.post("/api/analyze_keyword", { keyword: keyword }
     ).then(function(data) {
-        window.location.replace("/keyword_analysis", data);
-      });
+      //  window.location.replace("/keyword_analysis", data);
+      //  blueIds: blueIds, redIds: redIds
 
+            // passing the post IDS on to the keyword_analysis route
+
+            window.location.replace("/keyword_analysis");
+      });
 }
+
+function handleLoginErr(err) {
+    console.log(err.responseJSON);
+  }

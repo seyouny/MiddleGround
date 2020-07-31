@@ -14,7 +14,8 @@ module.exports = function(app) {
     app.get("/keyword_analysis", function(req, res) {
     
         dataObject = req.body;
-        res.render("analysis", dataObject);
-
+        console.log(dataObject);
+       // res.render("analysis", dataObject);
+        res.end();
     });
 };
