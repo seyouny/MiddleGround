@@ -38,15 +38,18 @@ module.exports = function(app) {
                     blues: bluePosts,
                     reds: redPosts,
                     keyword: keyword,
-                    googleInfo: googleInfo(keyword)
+                    google: googleInfo
                   };
     
                 if ((bluePosts.length < 1) || (redPosts.length<1))
                 {
+                  console.log("google",hbsObject.google)
                   hbsObject.count = 0;
                   console.log("NO POSTS FOUND");
                   res.json({error:"NO POSTS FOUND"});
                 } else {
+                  console.log("google",hbsObject.google)
+
                   hbsObject.count = bluePosts.length; + redPosts.length;
                   res.render("analysis", hbsObject);
                 }
