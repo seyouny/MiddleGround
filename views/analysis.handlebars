@@ -7,8 +7,8 @@
     <h1 class="topicHead">Topic:
       <span class="topic">{{ keyword }}</span></h1>
   </div>
-  
-    {{!-- fact check here --}}
+
+  {{!-- fact check here --}}
   <div class="list-container factCheck">
     <p class="factCheckHead">Google Fact Check Results</p>
     <ul class="factCheckList">
@@ -26,34 +26,34 @@
     </ul>
   </div>
 
-<div class='blueFeed group'>
-  {{#each blues}}
+  <div class='blueFeed group'>
+    {{#each blues}}
 
-  <div class='card'>
-    <img src='{{ dataValues.image }}' class='cardImage'>
-    <p class='cardText'> {{ dataValues.text }}</p>
-
-
-  </div>
+    <div class='card'>
+      <img src='{{ dataValues.image }}' class='cardImage'>
+      <p class='cardText'> {{ dataValues.text }}</p>
 
 
-  {{/each}}
+    </div>
 
-</div>
 
-<div class='redFeed group'>
-  {{#each reds}}
-
-  <div class='card'>
-    <img src='{{ dataValues.image }}' class='cardImage'>
-    <p class='cardText'> {{ dataValues.text }}</p>
-
+    {{/each}}
 
   </div>
 
+  <div class='redFeed group'>
+    {{#each reds}}
 
-  {{/each}}
+    <div class='card'>
+      <img src='{{ dataValues.image }}' class='cardImage'>
+      <p class='cardText'> {{ dataValues.text }}</p>
 
 
-</div>
+    </div>
+
+
+    {{/each}}
+
+
+  </div>
 </div>
