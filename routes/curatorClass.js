@@ -38,6 +38,9 @@ class Stream {
 
             if ( postText.toLowerCase().includes(this.keyword) ){
                 newArray.push(post);
+            } else {
+                console.log("Didn't find " + this.keyword + " in: ");
+                console.log(postText);
             }
         });
     
@@ -45,7 +48,7 @@ class Stream {
     }
 
     getCuratorFeed (FeedId, cb) {
-        let queryString = endptURL + FeedId + "/posts?api_key=" + API_Key;
+        let queryString = endptURL + FeedId + "/posts?api_key=" + API_Key+"";
         axios.get(queryString)
           .then(response => {
               switch(FeedId) {

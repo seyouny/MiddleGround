@@ -6,11 +6,36 @@
     float:left;
     margin:20px;
     display:inline-block;
+    border:2px solid black;
+    border-radius:3px;
 }
 
 .cardImage {
     width:100%;
 
+}
+
+/* This is the news source logo such as CNN or FoxNews */
+.userImage {
+    width:60px;
+    height:60px;
+    float:left;
+    display:inline-block;
+}
+.source {
+    height:60px;
+    background-color:#dddddd;
+    float:left;
+    text-transform: capitalize;
+    font-weight: bold;
+    display:inline-block;
+    vertical-align: top;
+    width:100%;
+    box-sizing: border-box;
+}
+.source p {
+    text-align: left;
+    padding-left:80px;
 }
 
 .cardText {
