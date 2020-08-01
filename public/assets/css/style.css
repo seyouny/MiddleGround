@@ -84,13 +84,6 @@ form {
   
 }
 
-.factCheck {
-    background-color: darkgray;
-    box-sizing: border-box;
-    padding: 1%;
-    color: rgba(255, 255, 255, .8)
-}
-
 footer {
     display: block;
     width: 100%;
