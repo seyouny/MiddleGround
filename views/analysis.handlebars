@@ -9,7 +9,7 @@
   </div>
 
   {{!-- fact check here --}}
-  <div class="list-container factCheck">
+  <div class="list-container factCheck group googleBox">
     <p class="factCheckHead">Google Fact Check Results</p>
     <ul class="factCheckList">
       <li> <span class="factCheckLabel">Claim:</span>
@@ -25,18 +25,17 @@
         <span class="factCheckItem">Mostly False</span></li>
     </ul>
   </div>
-
-  <div class='blueFeed group'>
+</div>
+<div class='feedContainer group'>
+  <div class='feed blueFeed group'>
     {{#each blues}}
       {{> cards/card-block}}
     {{/each}}
   </div>
 
-  <div class='redFeed group'>
+  <div class='feed redFeed group'>
     {{#each reds}}
       {{> cards/card-block}}
     {{/each}}
-
-
   </div>
 </div>
