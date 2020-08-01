@@ -28,6 +28,48 @@
     margin:0;
 }
 
+.factCheck {
+    display: block;
+    background-color: darkgray;
+    padding-top: .5px;
+    color: rgba(255, 255, 255, .8);
+    align-items: center;
+    padding-bottom: 5px;
+}
+
+.factCheckHead {
+    font-size: 1.35em;
+    font-weight: bold;
+    padding-bottom: 0px;
+    color: rgba(255, 255, 255, .5);
+}
+
+.factCheckList {
+    margin: auto;
+    list-style-type: none;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.factCheckLabel {
+    font-weight: bold;
+    background-color: transparent;
+    display: inline;
+    float: left;
+    padding-left: 15px;
+    padding-right: 3px;
+    text-align: center;
+}
+
+.factCheckItem {
+    display: inline;
+    float: left;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: rgb(255, 255, 255, .75);
+    color: rgb(144, 141, 141);
+}
+
 .redFeed {
     background-color:red;
     border:4px solid red;
@@ -48,6 +90,24 @@
     display:none;
 }
 
+.topic {
+    display: inline;
+    font-weight: bold;
+    font-size: 1em;
+    color: white;
+    background-color: rgba(255, 255, 255, .25);
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.topicHead {
+    color: rgba(255, 255, 255, .5);
+}
+
+ul {
+    text-align: center;
+}
 
 /*  ClearFix  */
 /*  The ClearFix by Tony Aslett and Nicholas Gallagher */
