@@ -7,9 +7,9 @@ var db = require("../models");
 const {google} = require('googleapis');
 
 
+var googleArray = [];
 
-function googleQuery() {
-  var googleArray = [];
+// function googleQuery() {
       // app.get("keyword_analysis",function(req,res){
       //   var keyword = req.query.keyword;
         const factchecktools = google.factchecktools('v1alpha1');
@@ -28,24 +28,31 @@ function googleQuery() {
         // doing the magic !!
         const res = await factchecktools.claims.search({
           languageCode: 'English',
-          query: " ",
+          query: "black lives matter",
           key: 'AIzaSyAPRblVUYQKXe26yrvEXPM5u9CLjSSX9zc',
         });
         
         var googleInfo = res.data
+          // console.log(res.data.claims[0].claimReview[0])
         for (i in res.data.claims){
-          googleArray.push(res.data.claims[i].claimReview)
+          const googArray = await googleArray.push(res.data.claims[i].claimReview[0])
+
         }
+        
+        console.log (googleArray);
+
+        
       }
       main().catch(e => {
         console.error(e);
         throw e;
       });
-      return googleArray;
 
-      // })
-    } 
-    module.exports = googleQuery;
+      // }
+    // } 
+
+    module.exports = googleArray;
+    // googleQuery()
       
     
       // [{
