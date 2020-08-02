@@ -11,21 +11,31 @@
   {{!-- fact check here --}}
   <div class="list-container factCheck group googleBox">
     <p class="factCheckHead">Google Fact Check Results</p>
-    <ul class="factCheckList">
-      <li> <span class="factCheckLabel">Claim:</span>
-        <span class="factCheckItem">Masks Not Needed</span></li>
 
-      <li> <span class="factCheckLabel">Publisher:</span>
-        <span class="factCheckItem">Trump</span></li>
+       {{#each googleInfos}}
+          {{#if title}}
+            <div class='factCheckBox'>
+         
+              <p class="">Claim:
+               {{title}}</p>
 
-      <li> <span class="factCheckLabel">Title:</span>
-        <span class="factCheckItem">Tweet #10,976</span></li>
+              <p><span>Publisher:</span>
+                <a href='{{publisher.site}}'>{{publisher.name}}</a></p>
 
-      <li> <span class="factCheckLabel">Fact Check Rating:</span>
-        <span class="factCheckItem">Mostly False</span></li>
-    </ul>
+              <p> <span class="">Fact Check Rating:</span>
+                <span class="">{{textualRating}}</span></p>
+            </div>
+             {{/if}}
+        {{/each}}
+
+
+
   </div>
 </div>
+
+
+
+
 <div class="outletStats">
 News Outlet Stats go here.
 </div>

@@ -38,6 +38,22 @@
 
 }
 
+.googleTitle {
+    text-align: center;
+    color:white;
+}
+
+.factCheckBox {
+    background-color:white;
+    width:200px;
+    display:inline-block;
+    margin:4px;
+    color:black;
+    border-radius:4px;
+    box-shadow:0 0 20px rgb(133, 133, 133);
+    vertical-align: top;
+}
+
 /* This is the news source logo such as CNN or FoxNews */
 .userImage {
     width:60px;

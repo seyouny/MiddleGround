@@ -1,7 +1,21 @@
-
+var express = require("express");
 var googleQuery = require ('./google-api.js');
 var db = require("../models");
 
+function getOutletStats(blue,red) {
+
+  blueStats = [];
+  redStats = [];
+  blue.forEach( post => {
+    blueStats.push(post.user_screen_name);
+  });
+  red.forEach( post => {
+    redStats.push(post.user_screen_name);
+  });
+  var statObject = {blue:blueStats, red:redStats}
+  return statObject;
+
+}
 module.exports = function(app) {
 
 
@@ -26,44 +40,56 @@ module.exports = function(app) {
 
                 redPosts = redPostsReturned;
 
-                var googleData= googleQuery(keyword);
-                var hbsObject = {
-                    blues: bluePosts,
-                    blueCount: bluePosts.length,
-                    reds: redPosts,
-                    redCount: redPosts.length,
-                    keyword: keyword,
-                    googleInfo: googleData
-                  };
-    
-                // This code block notifies the user if there are no posts found on their topic
+                googleQuery(keyword).then ( function(googleDataReturned) {
 
-                if ((bluePosts.length < 1) || (redPosts.length<1))
-                {
-                  hbsObject.count = 0;
-                  console.log("NO POSTS FOUND");
-               
-                  // alert("No posts found on that topic.");
-                  
-                  res.render("error", {error: "NO POSTS FOUND"});
-                  
 
-                 // res.json({error:"NO POSTS FOUND"});
-                } else {
-                  hbsObject.count = bluePosts.length; + redPosts.length;
-               
-                  res.render("analysis", hbsObject);
-                }
-                
-            })
-     
-   
-          });
-  
+                        var outletStats = getOutletStats(bluePosts,redPosts);
+                        console.log(outletStats);
+                        console.log("Google Info: --------");
+                        console.log(googleDataReturned);
+
+                        var hbsObject = {
+                            blues: bluePosts,
+                            blueCount: bluePosts.length,
+                            reds: redPosts,
+                            redCount: redPosts.length,
+                            keyword: keyword,
+                            outletStats:outletStats,
+                            googleInfos: googleDataReturned
+                          };
+
+                        // This code block notifies the user if there are no posts found on their topic
+
+                        if ((bluePosts.length < 1) || (redPosts.length<1))
+                        {
+                          hbsObject.count = 0;
+                          console.log("NO POSTS FOUND");
+
+                          // alert("No posts found on that topic.");
+                          
+                          res.render("error", {error: "NO POSTS FOUND"});
+                          
+
+                        // res.json({error:"NO POSTS FOUND"});
+                        } else {
+                          hbsObject.count = bluePosts.length; + redPosts.length;
+
+                          res.render("analysis", hbsObject);
+                        }
+
+                          
+                }).catch(e => {
+                  console.error(e);
+                  throw e;
+                });;
+            });
+          });  
     });
     app.get("/*", function(req, res) {
 
         res.render("index");
 
     });
-};
+ };
+
+
