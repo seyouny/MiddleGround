@@ -1,22 +1,13 @@
-var express = require("express");
-var googleInfo = require ('./google-api.js');
-var router = express.Router();
+
+var googleQuery = require ('./google-api.js');
 var db = require("../models");
-const apiRoutes = require("./api-routes");
-// Import the models to use its database functions.
+
 module.exports = function(app) {
-    // Create all our routes and set up logic within those routes where required.
 
-    
-    app.get("keyword_analysis",function(req,res){
-      var keyword = req.query.keyword;
-      var alldata = 
-      res.render("analysis", hbsObject);
 
-    })
     app.get("/keyword_analysis", function(req, res) {
        
-       console.log("Request.params: " + JSON.stringify(req.query) );
+      // console.log("Request.params: " + JSON.stringify(req.query) );
         var keyword = req.query.keyword;
         var bluePosts = [];
         db.Post.findAll({
@@ -34,13 +25,19 @@ module.exports = function(app) {
               }}).then( function(redPostsReturned) {
 
                 redPosts = redPostsReturned;
+
+                var googleData= googleQuery(keyword);
                 var hbsObject = {
                     blues: bluePosts,
+                    blueCount: bluePosts.length,
                     reds: redPosts,
+                    redCount: redPosts.length,
                     keyword: keyword,
-                    googleInfo: googleInfo(keyword)
+                    googleInfo: googleData
                   };
     
+                // This code block notifies the user if there are no posts found on their topic
+
                 if ((bluePosts.length < 1) || (redPosts.length<1))
                 {
                   hbsObject.count = 0;

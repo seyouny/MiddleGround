@@ -1,18 +1,12 @@
-// requiring google api 
-// requiring factchecktools 
-var express = require("express");
-var router = express.Router();
-const apiRoutes = require("./api-routes");
-var db = require("../models");
+// only require is Google
 const {google} = require('googleapis');
 
 
-
-function googleQuery() {
+async function googleQuery() {
   var googleArray = [];
       // app.get("keyword_analysis",function(req,res){
       //   var keyword = req.query.keyword;
-        const factchecktools = google.factchecktools('v1alpha1');
+        var factchecktools = google.factchecktools('v1alpha1');
      
         // api key
         // AIzaSyAvfhWexV2bqPbvo1UNth0pJ4Tw-C479cA
@@ -37,34 +31,12 @@ function googleQuery() {
           googleArray.push(res.data.claims[i].claimReview)
         }
       }
-      main().catch(e => {
+      await main().catch(e => {
         console.error(e);
         throw e;
       });
       return googleArray;
-
-      // })
     } 
     module.exports = googleQuery;
       
     
-      // [{
-      //   "claims" [
-      //     {
-      //       "text": [],
-      //       "claimReview": 
-      //         {
-      //           "publisher": {
-      //             "name": "",
-      //             "site": "",
-      //           },
-      //           "url": "",
-      //           "title": "",
-      //           "textualRating": "",
-      //           "languageCode": "en"
-      //         }
-            
-      //     }
-      //   ]
-      // }]
-

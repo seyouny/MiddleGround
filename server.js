@@ -21,7 +21,7 @@ app.set("view engine", "handlebars");
 // static directory 
 app.use(express.static("public"));
 
-// requiring routes .. this is tbd because there are no routes.js files yet 
+// requiring routes .. 
 // require("./** folder name ** / ** file name ** )(app); // facebook
 // require("./** folder name ** / ** file name ** )(app); // google
 // require("./** folder name ** / ** files name **)(app); // twitter
