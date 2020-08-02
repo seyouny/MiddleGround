@@ -11,29 +11,48 @@
   {{!-- fact check here --}}
   <div class="list-container factCheck group googleBox">
     <p class="factCheckHead">Google Fact Check Results</p>
-    <ul class="factCheckList">
-      <li> <span class="factCheckLabel">Claim:</span>
-        <span class="factCheckItem">Masks Not Needed</span></li>
 
-      <li> <span class="factCheckLabel">Publisher:</span>
-        <span class="factCheckItem">Trump</span></li>
+       {{#each googleInfos}}
+          {{#if title}}
+            <div class='factCheckBox'>
+         
+              <p><strong>Claim:</strong>
+               {{title}}</p>
 
-      <li> <span class="factCheckLabel">Title:</span>
-        <span class="factCheckItem">Tweet #10,976</span></li>
+              <p><strong>Rated by: &nbsp;</strong><a href='{{publisher.site}}'>{{publisher.name}}</a></p>
 
-      <li> <span class="factCheckLabel">Fact Check Rating:</span>
-        <span class="factCheckItem">Mostly False</span></li>
-    </ul>
+              <p> <strong>Rating:</strong>
+                <span class="">{{textualRating}}</span></p>
+            </div>
+             {{/if}}
+        {{/each}}
+
+
+
   </div>
+</div>
+
+
+
+
+<div class="outletStats">
+News Outlet Stats go here.
+</div>
+
+
+
 </div>
 <div class='feedContainer group'>
   <div class='feed blueFeed group'>
+    <div class='stats'><span class='countNumber'>{{ blueCount }}</span> Liberal posts</div>
+   
     {{#each blues}}
       {{> cards/card-block}}
     {{/each}}
   </div>
 
   <div class='feed redFeed group'>
+       <div class='stats'><span class='countNumber'>{{ redCount }}</span> Conservative posts</div>
     {{#each reds}}
       {{> cards/card-block}}
     {{/each}}

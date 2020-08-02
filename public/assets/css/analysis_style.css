@@ -1,6 +1,7 @@
 .googleBox {
     overflow: hidden;
     padding:0;
+    text-align: center;
 }
 
 .card {
@@ -24,6 +25,37 @@
 .cardImage {
     width:100%;
 
+}
+
+.stats {
+    color:white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:2em;
+}
+
+.countNumber {
+   
+
+}
+
+.googleTitle {
+    text-align: center;
+    color:white;
+}
+
+.factCheckBox {
+    background-color:white;
+    width:200px;
+    display:inline-block;
+    margin:4px;
+    color:black;
+    border-radius:4px;
+    box-shadow:0 0 20px rgb(133, 133, 133);
+    vertical-align: top;
+    text-align: left;
+    font-size:.8em;
+    padding-left:8px;
+    box-sizing: border-box;
 }
 
 /* This is the news source logo such as CNN or FoxNews */
@@ -64,6 +96,7 @@
     display:block;
     margin:0;
     text-align: center;
+    position: relative;
 }
 
 .blueFeed {
@@ -85,11 +118,9 @@
 
 
 .factCheck {
-    display: block;
     background-color: darkgray;
-    padding-top: .5px;
+    padding-top: 5px;
     color: rgba(255, 255, 255, .8);
-    align-items: center;
     padding-bottom: 5px;
 }
 
@@ -97,34 +128,33 @@
     font-size: 1.35em;
     font-weight: bold;
     padding-bottom: 0px;
+    margin:0;
     color: rgba(255, 255, 255, .5);
 }
 
-.factCheckList {
-    margin: auto;
+ul.factCheckList {
     list-style-type: none;
     padding-bottom: 30px;
     text-align: center;
 }
 
+ul.factCheckList li {
+    display: inline-block;
+}
 .factCheckLabel {
     font-weight: bold;
     background-color: transparent;
-    display: inline;
-    float: left;
     padding-left: 15px;
     padding-right: 3px;
-    text-align: center;
 }
 
 .factCheckItem {
-    display: inline;
-    float: left;
     padding-left: 5px;
     padding-right: 5px;
     background-color: rgb(255, 255, 255, .75);
     color: rgb(144, 141, 141);
 }
+
 
 
 .errorMsg {
