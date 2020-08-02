@@ -30,12 +30,12 @@
 .stats {
     color:white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
+    font-size:2em;
 }
 
 .countNumber {
-    font-size:2em;
-    display:block;
+   
+
 }
 
 /* This is the news source logo such as CNN or FoxNews */
