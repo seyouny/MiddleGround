@@ -1,68 +1,58 @@
 <div class='analysis'>
-<<<<<<< HEAD
-   <a href='/'> <img src='assets/images/logo.png' class='logo'></a><br>
-<h1>Topic: 
-{{ keyword }}</h1>
-<h3>Fact Check: </h3>
-{{#each googleInfo}}
-<p>{{textualRating}}</p>
-<div class='blueFeed group'>
-  {{#each blues}}
-    
-        <div class='card'>
-            <img src='{{ dataValues.image }}' class='cardImage'>
-            <p class='cardText'> {{ dataValues.text }}</p>
-        
-         
-        </div>
-=======
 
   <div class="jumbo">
     <a href='/'> <img src='assets/images/logo.png' class='logo'></a><br>
   </div>
-  <div class="topic">
-    <h1>Topic:
-      {{ keyword }}</h1>
+  <div>
+    <h1 class="topicHead">Topic:
+      <span class="topic">{{ keyword }}</span></h1>
   </div>
-  <div class="factCheck">
-    <p>Google Fact Check Results: </p>
-    <p>Claim: Masks Not Needed</p>
-    <p>Publisher: Trump</p>
-    <p>Title: Tweet #10,976</p>
-    <p>Fact Check Rating: Mostly False</p>
-    {{!-- fact check here --}}
+
+  {{!-- fact check here --}}
+  <div class="list-container factCheck group googleBox">
+    <p class="factCheckHead">Google Fact Check Results</p>
+
+       {{#each googleInfos}}
+          {{#if title}}
+            <div class='factCheckBox'>
+         
+              <p><strong>Claim:</strong>
+               {{title}}</p>
+
+              <p><strong>Rated by: &nbsp;</strong><a href='{{publisher.site}}'>{{publisher.name}}</a></p>
+
+              <p> <strong>Rating:</strong>
+                <span class="">{{textualRating}}</span></p>
+            </div>
+             {{/if}}
+        {{/each}}
+
+
+
   </div>
-  <div class='blueFeed group'>
+</div>
+
+
+<div class="outletStats">
+News Outlet Stats go here.
+</div>
+
+
+
+</div>
+<div class='feedContainer group'>
+  <div class='feed blueFeed group'>
+    <div class='stats'><span class='countNumber'>{{ blueCount }}</span> Liberal posts</div>
+   
     {{#each blues}}
->>>>>>> 48c87468b3abda13c3d13183a4087ec5bf8b84f3
-
-    <div class='card'>
-      <img src='{{ dataValues.image }}' class='cardImage'>
-      <p class='cardText'> {{ dataValues.text }}</p>
-
-
-    </div>
-
-
+      {{> cards/card-block}}
     {{/each}}
-
   </div>
 
-
-  {{#each reds}}
-
-<div class='redFeed group'>
-        <div class='card'>
-            <img src='{{ dataValues.image }}' class='cardImage'>
-            <p class='cardText'> {{ dataValues.text }}</p>    
-        </div>
-
-
-    </div>
-
-
+  <div class='feed redFeed group'>
+       <div class='stats'><span class='countNumber'>{{ redCount }}</span> Conservative posts</div>
+    {{#each reds}}
+      {{> cards/card-block}}
     {{/each}}
-
-
   </div>
 </div>

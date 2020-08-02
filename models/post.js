@@ -18,6 +18,7 @@ module.exports = function(sequelize, DataTypes) {
       thumbnail: DataTypes.TEXT,
       has_media: DataTypes.BOOLEAN,
       user_image: DataTypes.STRING,
+      user_screen_name: DataTypes.STRING,
       network_name: DataTypes.STRING,
       user_url: DataTypes.STRING,
     });
