@@ -52,6 +52,10 @@
     border-radius:4px;
     box-shadow:0 0 20px rgb(133, 133, 133);
     vertical-align: top;
+    text-align: left;
+    font-size:.8em;
+    padding-left:8px;
+    box-sizing: border-box;
 }
 
 /* This is the news source logo such as CNN or FoxNews */
