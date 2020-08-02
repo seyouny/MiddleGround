@@ -46,6 +46,7 @@ module.exports = function(app) {
                         thumbnail: postItem.thumbnail,
                         has_media: postItem.has_media,
                         user_image: postItem.user_image,
+                        user_screen_name: postItem.user_screen_name,
                         network_name: postItem.network_name,
                         user_url: postItem.user_url
 
@@ -70,6 +71,7 @@ module.exports = function(app) {
                         thumbnail: postItem.thumbnail,
                         has_media: postItem.has_media,
                         user_image: postItem.user_image,
+                        user_screen_name: postItem.user_screen_name,
                         network_name: postItem.network_name,
                         user_url: postItem.user_url
 
