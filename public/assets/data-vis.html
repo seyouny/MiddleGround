@@ -3,14 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery.js"></script>
+
     <title>Middle|Ground</title>
+    <!-- <script src="js/wordcloud.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <script type="text/javascript" src="./js/wordcloud2.js"></script>
+    <script> 
+        $(document).ready(function () {
+        WordCloud(document.getElementById('blue_canvas'), { list:[['mask', 60], ['virus', 4], ['vaccine', 20], ['trump', 12], ['sick', 6], ['cure', 25], ['Fauci', 40]] } )
+
+        WordCloud(document.getElementById('red_canvas'), { list:[['freedom', 60], ['hoax', 4], ['infections', 20], ['trump', 12], ['recovered', 6], ['cure', 25], ['Fauci', 40]] } )
+        
+        });
+    </script>
+
 </head>
 <body>
     <div class='jumbo'>
-        <img src="assets/images/logo.png" class="logo">
+        <img src="./images/logo.png" class="logo">
       <p class='tagline'>Insights on the news you receive and issues you care about.</p>
-      <h1>Data Visualization Page</h1>
-      </div>
+    </div>
+    
+    <div>
+        <h1>Data Visualization Page</h1>
+    </div>
+    
+    <canvas id="blue_canvas" class="wordCloud"></canvas>
+
+    <canvas id="red_canvas" class="wordCloud"></canvas>
+
 </body>
 <footer>
     Image by Moshe Harosh from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3113668" class="subtleLink">Pixabay</a>
