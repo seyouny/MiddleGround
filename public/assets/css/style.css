@@ -15,10 +15,6 @@ body {
     position: relative;
 }
 
-canvas {
-    display: block;
-    float: left;
-}
 
 h1 {
     font-size: 2em;
