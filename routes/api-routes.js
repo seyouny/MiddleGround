@@ -2,7 +2,7 @@ var express = require("express");
 
 var router = express.Router();
 var db = require("../models");
-const Stream = require("./curatorClass");
+const Stream = require("../classes/streamClass");
 
 
 // Import the models to use its database functions.
@@ -82,10 +82,8 @@ module.exports = function(app) {
           
                  });
 
-                 //console.log("BlueCount: " + blueFeed.count + ", Red: " + redFeed.count);
-                // Return an array of post id's to the Client Side JS
                 res.json( {});
-              // res.end( );
+    
                
             })
         })
