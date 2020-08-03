@@ -28,6 +28,10 @@
     "mysql2": "^2.1.0",
     "sequelize": "^6.3.3",
     "twit": "^2.2.11",
+<<<<<<< Updated upstream
     "xregexp": "^4.3.0"
+=======
+    "wordcloud": "^1.1.1"
+>>>>>>> Stashed changes
   }
 }
