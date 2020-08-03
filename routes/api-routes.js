@@ -107,13 +107,14 @@ module.exports = function(app) {
                       redFeed = reddata;
 
                       var wordCloud = findRecentTopics(bluedata,reddata);
-
+                      // console.log(res.json(wordCloud));
                       res.json(wordCloud);  // returns an object with nested arrays for the wordcloud 
                   });
                 });
 
 
     });
+    
     app.post("/api/analyze_keyword", function(req, res) {
         var keyword = req.body.keyword;
         console.log('keyword: ' + keyword);

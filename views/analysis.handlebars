@@ -36,7 +36,11 @@
 
 
 <div class="outletStats">
+<<<<<<< HEAD
   <a href="/stats">Word clouds</a>
+=======
+  <a href="/stats" id="wordCloudLink">View Word Clouds</a>
+>>>>>>> bartsBranch
 </div>
 
 
@@ -44,7 +48,7 @@
 </div>
 <div class='feedContainer group'>
   <div class='feed blueFeed group'>
-    <div class='stats'><span class='countNumber'>{{ blueCount }}</span> Liberal posts</div>
+    <div class='stats'>"Liberal" sources: <span class='countNumber'>{{ blueCount }}</span> posts</div>
    
     {{#each blues}}
       {{> cards/card-block}}
@@ -52,7 +56,7 @@
   </div>
 
   <div class='feed redFeed group'>
-       <div class='stats'><span class='countNumber'>{{ redCount }}</span> Conservative posts</div>
+       <div class='stats'>"Conservative" sources: <span class='countNumber'>{{ redCount }}</span> posts</div>
     {{#each reds}}
       {{> cards/card-block}}
     {{/each}}
