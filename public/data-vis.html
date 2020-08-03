@@ -10,20 +10,33 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
     <script src="https://code.jquery.com/jquery.js"></script>
 
-    <script type="text/javascript" src="./js/wordcloud2.js"></script>
+    <script type="text/javascript" src="../assets/js/wordcloud2.js"></script>
     <script> 
         $(document).ready(function () {
-        WordCloud(document.getElementById('blue_canvas'), { list:[['mask', 60], ['virus', 4], ['vaccine', 20], ['trump', 12], ['sick', 6], ['cure', 25], ['Fauci', 40]] } )
 
-        WordCloud(document.getElementById('red_canvas'), { list:[['freedom', 60], ['hoax', 4], ['infections', 20], ['trump', 12], ['recovered', 6], ['cure', 25], ['Fauci', 40]] } )
-        
+            console.log("Starting the script.");
+            
+        $.ajax("/api/word-cloud-data", {
+        type: "GET" }).then( function(data) {
+
+            console.log("Got the data back from the api");
+            
+            console.log(data);
+
+            WordCloud(document.getElementById('blue_canvas'), { list:[['mask', 60], ['virus', 4], ['vaccine', 20], ['trump', 12], ['sick', 6], ['cure', 25], ['Fauci', 40]] } );
+
+            WordCloud(document.getElementById('red_canvas'), { list:[['freedom', 60], ['hoax', 4], ['infections', 20], ['trump', 12], ['recovered', 6], ['cure', 25], ['Fauci', 40]] } );
+        }
+
+        );
+  
         });
     </script>
 
 </head>
 <body>
     <div class='jumbo'>
-        <img src="./images/logo.png" class="logo">
+        <img src="assets/images/logo.png" class="logo">
       <p class='tagline'>Insights on the news you receive and issues you care about.</p>
     </div>
     
