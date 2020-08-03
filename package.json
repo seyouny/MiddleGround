@@ -27,6 +27,7 @@
     "handlebars": "^4.7.6",
     "mysql2": "^2.1.0",
     "sequelize": "^6.3.3",
-    "twit": "^2.2.11"
+    "twit": "^2.2.11",
+    "wordcloud": "^1.1.1"
   }
 }

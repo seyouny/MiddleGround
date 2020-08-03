@@ -1,6 +1,8 @@
 var express = require("express");
 var googleQuery = require ('./google-api.js');
 var db = require("../models");
+const Stream = require("../classes/streamClass");
+var path = require("path");
 
 function getOutletStats(blue,red) {
 
@@ -16,6 +18,7 @@ function getOutletStats(blue,red) {
   return statObject;
 
 }
+
 module.exports = function(app) {
 
 
@@ -60,7 +63,7 @@ module.exports = function(app) {
 
                         // This code block notifies the user if there are no posts found on their topic
 
-                        if ((bluePosts.length < 1) || (redPosts.length<1))
+                        if ((bluePosts.length < 1) && (redPosts.length<1))
                         {
                           hbsObject.count = 0;
                           console.log("NO POSTS FOUND");
@@ -85,9 +88,16 @@ module.exports = function(app) {
             });
           });  
     });
+
+    app.get("/stats", function(req, res) {
+  
+      res.sendFile(path.join(__dirname, "/../public/data-vis.html"));
+    });
+
     app.get("/*", function(req, res) {
 
         res.render("index");
+       
 
     });
  };
