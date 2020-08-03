@@ -1,3 +1,4 @@
+
 .googleBox {
     overflow: hidden;
     padding:0;
@@ -5,7 +6,7 @@
 }
 
 .card {
-    background-color:white;
+    background-color:rgba(255, 255, 255, .5);
     padding:0px;
     width:90%;
     margin:0px;
@@ -29,8 +30,17 @@
 
 .stats {
     color:white;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size:2em;
+    font-family: 'Lato', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-top: 5px;
+    font-size:1.35em;
+}
+
+#wordCloudLink {
+    color:rgba(255, 255, 255, .8);
+    font-family: 'Lato', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size:1.35em;
 }
 
 .countNumber {
@@ -44,7 +54,7 @@
 }
 
 .factCheckBox {
-    background-color:white;
+    background-color:rgba(255, 255, 255, .5);
     width:200px;
     display:inline-block;
     margin:4px;
@@ -120,21 +130,20 @@
     box-shadow:0 0 20px rgb(228, 76, 76);
 }
 
-
-
 .factCheck {
-    background-color: darkgray;
+    background-color: #d6d6cf;
     padding-top: 5px;
-    color: rgba(255, 255, 255, .8);
+    color: rgb(93, 93, 91);
     padding-bottom: 5px;
 }
 
 .factCheckHead {
     font-size: 1.35em;
     font-weight: bold;
-    padding-bottom: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     margin:0;
-    color: rgba(255, 255, 255, .5);
+    color: rgba(255, 255, 255, 1);
 }
 
 ul.factCheckList {
@@ -160,14 +169,12 @@ ul.factCheckList li {
     color: rgb(144, 141, 141);
 }
 
-
-
 .errorMsg {
     background-color:red;
     color:white;
     font-size:.9em;
     font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Lato', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     padding:8px;
     display:none;
 }

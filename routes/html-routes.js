@@ -3,6 +3,7 @@ var googleQuery = require ('./google-api.js');
 var db = require("../models");
 const Stream = require("../classes/streamClass");
 var path = require("path");
+var fs = require('fs');
 
 function getOutletStats(blue,red) {
 
@@ -97,7 +98,6 @@ module.exports = function(app) {
     app.get("/*", function(req, res) {
 
         res.render("index");
-       
 
     });
  };
