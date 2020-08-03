@@ -16,7 +16,11 @@ var queryString;
 class Stream {
 
     constructor(keyword) {
-        this.keyword = keyword.toLowerCase();
+        if (keyword) {
+        this.keyword = keyword.toLowerCase(); }
+        else {
+            this.keyword = "";
+        }
         this.blueFeed;
         this.redFeed;
     }
@@ -33,10 +37,11 @@ class Stream {
         var newArray = [];
         console.log("Original feed post count: " + feed.postCount);
 
+        if (this.keyword) {
         feed.posts.forEach(post => {
             var postText = post.text;
 
-            if ( postText.toLowerCase().includes(this.keyword) ){
+            if ( postText.toLowerCase().includes(this.keyword.toLowerCase()) ){
                 newArray.push(post);
             } else {
                 console.log("Didn't find " + this.keyword + " in: ");
@@ -45,6 +50,12 @@ class Stream {
         });
     
         return newArray;
+        }
+        else {
+            console.log("no keyword on this: "+ feed.postCount);
+            return feed.posts;
+        }
+
     }
 
     getCuratorFeed (FeedId, cb) {
