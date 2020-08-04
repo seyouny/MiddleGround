@@ -92,16 +92,20 @@ li.builtWithLI {
     text-align: left;
 }
 
+#aboutProject {
+    padding-bottom: 20px;
+}
+
 #acknowledgements {
     padding: .7em;
     height: 30%;
-    background-color: rgba(218, 165, 32, .5);
+    background-color: rgba(189, 149, 46, 0.3);
 }
 
 #builtWith {
     padding: .7em;
     height: 30%;
-    background-color: rgba(218, 165, 32, .5);
+    background-color: rgba(218, 165, 32, .3);
 }
 
 #columns {
@@ -109,6 +113,13 @@ li.builtWithLI {
     margin-right: 10%;
     column-count: 3;
     break-inside: auto;
+}
+
+#aboutLink {
+    position: fixed;
+    right: 5%;
+    top: 3%;
+    color: rgba(255, 255, 255, .7);
 }
 
 ul.acksUL {
