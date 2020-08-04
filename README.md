@@ -55,12 +55,12 @@ For questions or to discuss collaborations on this or other projects, contact th
 
 
 **Seyoung "Stacey" Yoon**<br>
-![linkedin.com/....?](public/assets/images/Li-logo.png)[/.....?](https://www.linkedin.com/in/.....?)<br>
-![GitHub](public/assets/images/github-logo.png)[/seyouny](https://github.com/seyouny)
+[linkedin.com/stacey-yoon-bbaa7413a](https://www.linkedin.com/in/seyouny)<br>
+[github/seyouny](https://github.com/seyouny)
 
 
 **Donna Nguyen**<br>
-[linkedin.com//donna-nguyen-a71854b8](https://www.linkedin.com/in/donna-nguyen-a71854b8/)<br>
+[linkedin.com/donna-nguyen01](https://www.linkedin.com/in/donna-nguyen01)<br>
 [github.com/donnaxnguyen](https://github.com/donnaxnguyen)
 
 
