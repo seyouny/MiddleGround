@@ -55,7 +55,7 @@ For questions or to discuss collaborations on this or other projects, contact th
 
 
 **Seyoung "Stacey" Yoon**<br>
-[linkedin.com/stacey-yoon-bbaa7413a](https://www.linkedin.com/in/stacey-yoon-bbaa7413a)<br>
+[linkedin.com/stacey-yoon-bbaa7413a](https://www.linkedin.com/in/seyouny)<br>
 [github/seyouny](https://github.com/seyouny)
 
 
