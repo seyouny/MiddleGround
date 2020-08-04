@@ -11,20 +11,17 @@ const Stream = require("../classes/streamClass");
 function cleanString(stringArgument) {
     return stringArgument.replace(/[^\w\s]/gi, '');
   }
+
+
+
   function noNumeric(value) {
-    //return /^-{0,1}\d+$/.test(value);
     return value.replace(/\d[^abc]/g, '');
   }
-  
-  console.log("Test this 08974words: ", noNumeric("08974words"));
   
   function findRecentTopics(blue,red) {
     var bluePostText = "";
     var redPostText = "";
     var blueObject;
-    var redObject;
-    var blueTopics = {};
-    var redTopics ={};
   
     blue.forEach( post=> {
       var clean = cleanString(post.text.replace("\n", " ")).replace("'","").toLowerCase();
@@ -32,15 +29,12 @@ function cleanString(stringArgument) {
     
     })
   
-  
     var blueWords = noNumeric(bluePostText).split(" ");
     var redWords = noNumeric(redPostText).split(" ");
-  
-    //console.log(blueWords);
     var blueObject= convertToObject(blueWords);
-    blueArray = removeSmallCounts(blueObject);
+    var blueArray = removeSmallCounts(blueObject);
     var redObject = convertToObject(redWords);
-    redArray = removeSmallCounts(blueObject);
+    var redArray = removeSmallCounts(redObject);
   
     return { blue: blueArray, red: redArray };
   
@@ -50,20 +44,16 @@ function cleanString(stringArgument) {
   function removeSmallCounts(largeObject) {
     newArray = [];
   
-  
   for (keys in largeObject) {
     for (var nestedKey in largeObject[keys]) {
        if (keys.length > 2 ) {
           if (largeObject[keys][nestedKey] > 3 ) {
-  
                 newArray.push( [ keys, largeObject[keys][nestedKey]]);
               }
         }
     }
   }
-  
-    return newArray;
-      
+    return newArray;   
   }
   
   function convertToObject(wordArray) {
@@ -72,7 +62,6 @@ function cleanString(stringArgument) {
     wordArray.forEach( wordString => {
       
         if ( wordObject[wordString] ) {
-         // console.log("We found a word more than once!");
           wordObject[wordString].count =  wordObject[wordString].count + 1;
         }
         else {
