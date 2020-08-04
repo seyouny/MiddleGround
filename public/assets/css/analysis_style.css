@@ -198,19 +198,7 @@ ul {
     text-align: center;
 }
 
-/*  ClearFix  */
-/*  The ClearFix by Tony Aslett and Nicholas Gallagher */
-.group:before,
-.group:after {
-content: "";
-display: table; }
-
-.group:after {
-clear: both; }
-
-.group {
-zoom: 1;
-}
+s
 
 /* Styles for Larger screens */
 @media only screen and (min-width:800px) {
