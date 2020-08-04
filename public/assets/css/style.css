@@ -27,6 +27,11 @@ body {
     margin-bottom: 10px;
 }
 
+.aboutParagraph {
+    text-align: justify;
+    text-justify: distribute;
+}
+
 .aboutSubhead {
     font-size: 1.35em;
     font-weight: bold;
