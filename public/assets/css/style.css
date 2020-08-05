@@ -18,6 +18,7 @@ body {
     position: relative;
 }
 
+
 .aboutHead, .aboutSubhead, .aboutParagraph {
     display: block;
     left: 20%;
@@ -39,6 +40,7 @@ body {
     margin: 1% 10%;
     color: rgb(216, 163, 27);
 }
+
 
 #blue_canvas {
     display: inline-block;
@@ -78,6 +80,7 @@ body {
     position: fixed;
     left: 60%;
 }
+>>>>>>> bartsBranch
 
 ul.builtWithUL {
     margin-top: 10px;
